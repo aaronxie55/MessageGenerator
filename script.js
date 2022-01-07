@@ -1,5 +1,5 @@
-const messageSubjects = ['You', 'Me', 'I', 'He', 'She']
-const messagePredicates = ['should', 'can', 'need']
+const messageSubjects = ['You', 'Me', 'I', 'He', 'She', 'They']
+const messagePredicates = ['should', 'can', 'need', 'need to', 'will', 'must']
 const messageQuotes = ['Be yourself; everyone else is already taken.', 'Be the change that you wish to see in the world.', 'We accept the love we think we deserve.']
 
 const MessageFactory = (subject, predicate, quote) => {
@@ -21,4 +21,14 @@ const randomSelect = (obj, key) => {
     return elementSelect
 }
 
-console.log(randomSelect(randomMessage, 'subject'))
+/* console.log(randomSelect(randomMessage, 'subject')) */
+
+const generateMessage = (obj) => {
+    var messagePick = []
+    for (let i in obj) {
+        messagePick.push(randomSelect(obj, i))
+    }
+    console.log(`${messagePick[0]} ${messagePick[1]}: ${messagePick[2]}`)
+}
+
+generateMessage(randomMessage)

@@ -10,6 +10,15 @@ const MessageFactory = (subject, predicate, quote) => {
     }
 }
 
-var randomMessage = MessageFactory(messageSubjects[0], messagePredicates[0], messageQuotes[0])
+var randomMessage = MessageFactory(messageSubjects, messagePredicates, messageQuotes)
 
-console.log(randomMessage)
+/* console.log(randomMessage) */
+
+const randomSelect = (obj, key) => {
+    const randomIndex = Math.floor(Math.random() * obj[key].length)
+    const elementSelect = obj[key][randomIndex];
+
+    return elementSelect
+}
+
+console.log(randomSelect(randomMessage, 'subject'))
